@@ -53,13 +53,15 @@
 
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
-  <!-- video frames float/parallax around the static photo -->
-  <div class="float-frame ff1" data-tc="00:00:04:12" data-depth="30"></div>
-  <div class="float-frame ff2" data-tc="00:01:18:03" data-depth="55"></div>
-  <div class="float-frame ff3" data-tc="00:02:46:20" data-depth="80"></div>
-  <div class="float-frame ffr" data-tc="00:03:12:09" data-depth="68"></div>
-  <div class="hero-photo">
-    <img src="./assets/me.png" alt="Galib — video editor and motion designer">
+  <!-- photo + frames live in one anchored unit so the frames track the photo at every resolution -->
+  <div class="hero-visual">
+    <div class="float-frame ff3" data-tc="00:02:46:20" data-depth="80"></div>
+    <div class="float-frame ffr" data-tc="00:03:12:09" data-depth="68"></div>
+    <div class="hero-photo">
+      <img src="./assets/me.png" alt="Galib — video editor and motion designer">
+    </div>
+    <div class="float-frame ff1" data-tc="00:00:04:12" data-depth="30"></div>
+    <div class="float-frame ff2" data-tc="00:01:18:03" data-depth="55"></div>
   </div>
 
   <div class="hero-eyebrow"><span class="rec-dot"></span> REC — VIDEO EDITOR &amp; MOTION DESIGNER</div>

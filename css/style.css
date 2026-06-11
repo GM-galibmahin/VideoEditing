@@ -136,26 +136,32 @@ h1 .grade{
   background-size:cover;background-position:center;
   pointer-events:none;will-change:transform;
 }
-/* positioned around the hero photo: ff3/ffr behind it, ff1/ff2 in front */
-.ff1{width:200px;height:120px;bottom:16%;right:5%;transform:rotate(6deg)}
-.ff2{width:160px;height:95px;top:46%;right:30%;transform:rotate(-8deg)}
-.ff3{width:290px;height:175px;top:13%;right:19%;transform:rotate(3deg)}
-.ffr{width:124px;height:220px;top:30%;right:5.5%;transform:rotate(7deg)} /* 9:16 reels frame, peeks from behind the photo */
+/* frame positions are % of .hero-visual (the photo box) so they hug the
+   photo at every resolution; ff3/ffr behind it, ff1/ff2 in front */
+.ff1{width:200px;height:120px;bottom:4%;left:58%;transform:rotate(6deg)}
+.ff2{width:160px;height:95px;top:44%;right:70%;transform:rotate(-8deg)}
+.ff3{width:290px;height:175px;top:-6%;right:50%;transform:rotate(3deg)}
+.ffr{width:124px;height:220px;top:16%;left:68%;transform:rotate(7deg)} /* 9:16 reels frame, peeks from behind the photo */
 .float-frame::before{
   content:attr(data-tc);position:absolute;bottom:8px;left:10px;
   font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.08em;
   background:rgba(12,13,17,.6);padding:2px 6px;border-radius:3px;
 }
 
+/* ---------- HERO VISUAL (photo + frames as one anchored unit) ---------- */
+.hero-visual{
+  position:absolute;right:12%;top:50%;transform:translateY(-50%);
+  height:min(72vh,640px);aspect-ratio:653/1300; /* matches me.png */
+  pointer-events:none;
+}
 /* ---------- HERO PHOTO (static cutout, graded like a film still) ---------- */
 .hero-photo{
-  position:absolute;z-index:2;right:12%;top:50%;transform:translateY(-50%);
-  height:min(72vh,640px);
+  position:absolute;inset:0;z-index:2;
   pointer-events:none;isolation:isolate;
   filter:drop-shadow(0 24px 48px rgba(0,0,0,.55));
 }
 .hero-photo img{
-  height:100%;width:auto;display:block;position:relative;z-index:0;
+  height:100%;width:100%;display:block;position:relative;z-index:0;
   filter:brightness(.94) saturate(.92) contrast(1.04);
 }
 /* split-tone grade clipped to the cutout's alpha:
@@ -495,7 +501,7 @@ footer{
   .nav-links{display:none}
   .nav-toggle{display:flex}
   .mobile-menu{display:flex}
-  .hero-photo{display:none}
+  .hero-visual{display:none}
   .about-wrap{grid-template-columns:1fr}
   .float-frame{display:none}
   section{padding:80px 20px}
@@ -507,11 +513,11 @@ footer{
 /* tablets / small laptops (821–1180px): shrink the hero photo so it
    never collides with the headline; drop the mid-left front frame */
 @media(min-width:821px) and (max-width:1180px){
-  .hero-photo{height:min(54vh,460px);right:3%}
-  .ff3{width:220px;height:133px;right:13%;top:16%}
-  .ff1{width:160px;height:96px;right:2%}
-  .ffr{width:104px;height:185px;top:34%;right:4.5%}
-  .ff2{display:none}
+  .hero-visual{height:min(54vh,460px);right:9%}
+  .ff3{width:220px;height:133px}
+  .ff1{width:160px;height:96px}
+  .ffr{width:104px;height:185px}
+  .ff2{width:130px;height:78px}
 }
 
 /* short landscape screens (rotated phones, tiny laptops):
@@ -551,7 +557,7 @@ footer{
   .sec-tc,.sec-note{font-size:13px}
   .hero-sub{font-size:21px;max-width:660px}
   .btn{font-size:14px;padding:16px 30px}
-  .hero-photo{height:min(78vh,1100px);right:9%}
+  .hero-visual{height:min(78vh,1100px);right:9%}
   .ff1{width:290px;height:174px}
   .ff2{width:230px;height:138px}
   .ff3{width:420px;height:254px}
@@ -579,7 +585,7 @@ footer{
 @media(min-width:2600px){
   h1{font-size:clamp(330px,9vw,380px)}
   .hero-sub{font-size:24px;max-width:760px}
-  .hero-photo{height:min(78vh,1300px)} /* source is 1300px tall — don't upscale past it */
+  .hero-visual{height:min(78vh,1300px)} /* source is 1300px tall — don't upscale past it */
   .ff1{width:360px;height:216px}
   .ff2{width:280px;height:168px}
   .ff3{width:520px;height:315px}
