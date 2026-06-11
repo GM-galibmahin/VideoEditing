@@ -40,7 +40,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 - Film grain overlay: fixed SVG noise at 5% opacity over the whole page.
 - Section headers use fake timecodes as eyebrows (`00:01`, `00:02`, ...) — keep sequential if adding/removing sections.
 - Border radius: 12–14px on cards/panels, 3–4px on tags/buttons.
-- Demo thumbnails are CSS gradients (`t1`–`t6` classes) until real media replaces them.
+- Card thumbnails are real YouTube stills (inline `background` styles, `oar2.jpg` portrait for Shorts / `hqdefault.jpg` for 16:9); the `t1`–`t6` gradient classes remain as loading/fallback backgrounds.
 
 ---
 
@@ -59,8 +59,8 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 1. **Nav** — fixed, logo `GALIB.EDITS`, links: Showreel / Shorts / Films / Services / Contact
 2. **Hero** — "I CUT / STORIES / IN MOTION" (line 2 is outlined stroke text, line 3 is orange→teal gradient text), sub-copy, two CTAs
 3. **Showreel** (`#showreel`, tc 00:01) — large 16:9 demo player with play button, fake progress bar, DEMO tag
-4. **Shorts & Reels** (`#work`, tc 00:02) — FOUR 9:16 vertical cards: Mojo Brand Story, Kinetic Lyrics Reel, Podcast Hook Clips, Street Food Series
-5. **YouTube & Brand Films** (`#work-h`, tc 00:03) — THREE 16:9 horizontal cards: Product Launch Promo, Gaming Montage, Cinematic Travel Film
+4. **Shorts & Reels** (`#work`, tc 00:02) — FOUR 9:16 vertical cards (real @CyclopsGM Shorts): Esports LAN Promo, Squad Wipe Clip, Stream Highlights, Street Food Vlog
+5. **YouTube & Brand Films** (`#work-h`, tc 00:03) — THREE 16:9 horizontal cards (real @CyclopsGM videos): Headset Review — G435, Sniper Shots Montage, PUBG.EXE — Funny Moments
 6. **The Grade Room** (`#grade`, tc 00:04) — before/after slider
 7. **Services** (`#services`, tc 00:05) — 4 cards: Video Editing, Motion Graphics, Color Grading, Sound Design
 8. **How I Work** (`#process`, tc 00:06) — 4-step strip: Brief → Rough Cut → Polish → Delivery
@@ -93,7 +93,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 
 ## TODO / Roadmap
 
-- [ ] Replace ALL demo placeholders with real video embeds — all 8 `data-video` slots currently hold STAND-IN videos (Blender open movies / 4K demos) so the lightbox is testable; swap each URL for Galib's actual work when ready
+- [x] Replace ALL demo placeholders with real video embeds — all 8 slots now play real videos from Galib's channel (youtube.com/@CyclopsGM), with real YouTube thumbnails as card backgrounds (inline styles override the `t1`–`t6` gradient fallbacks)
 - [ ] Replace testimonial placeholder text with real client quotes (scrolling marquee is built — just swap the card contents in the single `.testi-set`; the loop clone is automatic)
 - [x] Set real email (mahingalib65@gmail.com) and social URLs (YouTube @CyclopsGM, Instagram @galibmahin, X @galib_mahin, LinkedIn /in/galibmahin)
 - [x] Split into `index.html` / `css/style.css` / `js/main.js` when project grows
