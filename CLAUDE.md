@@ -88,7 +88,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 
 - Visible keyboard focus: 2px teal outline on links/buttons
 - `prefers-reduced-motion` honored in both CSS and JS
-- Responsive breakpoint at 820px: nav links hidden, single-column about, floating frames hidden, smaller scrubber
+- Responsive tiers (all in `style.css` bottom): ≤380px flip/fold (smaller type, single-col stats, hidden sec-notes); ≤820px mobile (hamburger, single-col about, frames+photo hidden, smaller scrubber); 821–1180px tablet (smaller hero photo, `ff2` hidden to avoid headline collision); ≤560px height landscape guard (hero min-height auto); ≥1800px 1440p/ultrawide (1560px container, bigger type/photo/frames, nav aligned to container); ≥2600px 4K (1920px container, 290px h1). When changing the hero, re-check the headline-vs-photo gap at 1024 and 1366
 - Scrubber is `aria-hidden` (decorative)
 
 ---

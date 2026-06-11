@@ -502,6 +502,69 @@ footer{
   .scrub-label{display:none}
   .scrub-tc{min-width:84px;font-size:12px}
 }
+/* ---------- RESPONSIVE TIERS ---------- */
+
+/* tablets / small laptops (821–1180px): shrink the hero photo so it
+   never collides with the headline; drop the mid-left front frame */
+@media(min-width:821px) and (max-width:1180px){
+  .hero-photo{height:min(54vh,460px);right:3%}
+  .ff3{width:220px;height:133px;right:13%;top:16%}
+  .ff1{width:160px;height:96px;right:2%}
+  .ffr{width:104px;height:185px;top:34%;right:4.5%}
+  .ff2{display:none}
+}
+
+/* short landscape screens (rotated phones, tiny laptops):
+   let the hero grow instead of cramming into 100vh */
+@media(max-height:560px){
+  .hero{min-height:auto;padding:120px 28px 80px}
+}
+
+/* very narrow screens (flip phones, folds, small androids) */
+@media(max-width:380px){
+  nav{padding:14px 16px}
+  section{padding:64px 14px}
+  h1{font-size:clamp(44px,18vw,60px)}
+  .hero{padding:96px 16px 48px}
+  .hero-sub{font-size:15px}
+  .btn{padding:12px 18px;font-size:12px}
+  .mobile-menu{padding:80px 18px 96px}
+  .mobile-menu a{font-size:16px}
+  .sec-note{display:none}
+  .format-tag{display:none}
+  .stats{grid-template-columns:1fr}
+  .testi{width:86vw}
+  .scrubber{padding:0 10px;gap:8px}
+  .scrub-tc{min-width:72px;font-size:11px}
+}
+
+/* large desktops / 1440p / ultrawide: scale the stage up */
+@media(min-width:1800px){
+  section,.hero{max-width:1560px}
+  nav{padding:18px calc((100vw - 1560px)/2 + 28px)}
+  h1{font-size:clamp(176px,10.5vw,230px)}
+  h2{font-size:clamp(48px,4vw,84px)}
+  .hero-sub{font-size:19px;max-width:600px}
+  .hero-photo{height:min(72vh,820px);right:10%}
+  .ff1{width:250px;height:150px}
+  .ff2{width:200px;height:120px}
+  .ff3{width:360px;height:218px}
+  .ffr{width:152px;height:270px}
+  .work-grid-v{max-width:1220px}
+  .card-title{font-size:19px}
+  .lb-stage{width:min(80vw,1280px)}
+  .lightbox.vertical .lb-stage{width:min(80vw,460px,56.25dvh)}
+}
+
+/* 4K and beyond */
+@media(min-width:2600px){
+  section,.hero{max-width:1920px}
+  nav{padding:18px calc((100vw - 1920px)/2 + 28px)}
+  h1{font-size:clamp(230px,9vw,290px)}
+  .hero-photo{height:min(74vh,980px)}
+  .lb-stage{width:min(70vw,1600px)}
+}
+
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
