@@ -552,20 +552,23 @@ footer{
    the tuned 1920x1080 layout, pixel-doubled. Steps keep the effective CSS
    viewport in the ~1500-2000px range where the base design is verified. */
 @media(min-width:1800px){
-  body{--z:1.15;zoom:var(--z)}
+  body{--z:1.15;--zs:1.15;zoom:var(--z)}
+  /* sections scale GENTLER than the hero: nested zoom multiplies, so
+     zs/z counter-scales them down to the --zs factor */
+  section,footer{zoom:calc(var(--zs)/var(--z))}
   /* vw/vh inside a zoomed body get scaled AGAIN by the engine,
      so every viewport-unit length here is divided by --z to stay true.
      Only the HERO goes full-bleed; sections keep their centered 1240px
-     container (zoom scales it proportionally). */
+     container (their zoom scales it proportionally). */
   .hero{max-width:none;margin:0;min-height:calc(100vh/var(--z));
         padding-left:calc(4vw/var(--z));padding-right:calc(4vw/var(--z))}
   nav{padding:18px calc(4vw/var(--z))}
   h1{font-size:clamp(64px,min(calc(13vw/var(--z)),calc(17.4vh/var(--z))),176px)}
   .hero-visual{height:calc(78vh/var(--z));right:8%}
 }
-@media(min-width:2200px){body{--z:1.4}}
-@media(min-width:2700px){body{--z:1.7}}
-@media(min-width:3300px){body{--z:2}}
+@media(min-width:2200px){body{--z:1.4;--zs:1.25}}
+@media(min-width:2700px){body{--z:1.7;--zs:1.4}}
+@media(min-width:3300px){body{--z:2;--zs:1.55}}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
