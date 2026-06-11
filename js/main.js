@@ -61,6 +61,25 @@ if(!reduceMotion){
   }, {passive:true});
 }
 
+// ---------- Random video stills in the hero frames ----------
+// pulls thumbnails from the videos on the page; reshuffles every refresh
+(function(){
+  const frames2 = document.querySelectorAll('.hero .float-frame');
+  if(!frames2.length) return;
+  const idOf = el => (el.dataset.video.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([\w-]{11})/) || [])[1];
+  const shorts = [...document.querySelectorAll('[data-video*="shorts/"]')].map(idOf).filter(Boolean);
+  const wides  = [...document.querySelectorAll('[data-video*="watch?v="]')].map(idOf).filter(Boolean);
+  const pick = arr => arr.splice(Math.floor(Math.random() * arr.length), 1)[0];
+  frames2.forEach(f => {
+    const vertical = f.classList.contains('ffr');
+    const id = pick(vertical ? shorts : wides);
+    if(!id) return;
+    const img = vertical ? 'oar2' : 'hqdefault';
+    f.style.backgroundImage =
+      `linear-gradient(rgba(12,13,17,.45),rgba(12,13,17,.45)),url('https://img.youtube.com/vi/${id}/${img}.jpg')`;
+  });
+})();
+
 // ---------- Before/After grade slider ----------
 const baWrap = document.getElementById('baWrap');
 const baAfter = document.getElementById('baAfter');

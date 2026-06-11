@@ -133,15 +133,18 @@ h1 .grade{
 .float-frame{
   position:absolute;border:1px solid var(--line);border-radius:8px;
   background:linear-gradient(135deg,rgba(255,107,44,.07),rgba(45,214,193,.07));
+  background-size:cover;background-position:center;
   pointer-events:none;will-change:transform;
 }
-/* positioned around the hero photo: ff3 behind it, ff1/ff2 in front */
+/* positioned around the hero photo: ff3/ffr behind it, ff1/ff2 in front */
 .ff1{width:200px;height:120px;bottom:16%;right:5%;transform:rotate(6deg)}
 .ff2{width:160px;height:95px;top:46%;right:30%;transform:rotate(-8deg)}
 .ff3{width:290px;height:175px;top:13%;right:19%;transform:rotate(3deg)}
+.ffr{width:124px;height:220px;top:30%;right:5.5%;transform:rotate(7deg)} /* 9:16 reels frame, peeks from behind the photo */
 .float-frame::before{
   content:attr(data-tc);position:absolute;bottom:8px;left:10px;
   font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.08em;
+  background:rgba(12,13,17,.6);padding:2px 6px;border-radius:3px;
 }
 
 /* ---------- HERO PHOTO (plain static cutout, frames float around it) ---------- */
@@ -151,10 +154,11 @@ h1 .grade{
   pointer-events:none;
   filter:drop-shadow(0 24px 48px rgba(0,0,0,.55));
 }
-/* depth: the far frame (ff3) sits behind the photo, nearer frames float in front */
+/* depth: far frames (ff3, ffr) sit behind the photo, nearer frames float in front */
 .ff1{z-index:3}
 .ff2{z-index:3}
 .ff3{z-index:1}
+.ffr{z-index:1}
 
 /* ---------- SECTION SHARED ---------- */
 section{padding:110px 28px;max-width:1240px;margin:0 auto}
