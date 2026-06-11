@@ -471,8 +471,7 @@ footer{
   .nav-links{display:none}
   .nav-toggle{display:flex}
   .mobile-menu{display:flex}
-  .hero{align-items:flex-start;gap:24px}
-  .hero-photo{position:static;transform:none;order:-1;align-self:center;height:auto;width:clamp(160px,46vw,220px)}
+  .hero-photo{display:none}
   .about-wrap{grid-template-columns:1fr}
   .float-frame{display:none}
   section{padding:80px 20px}
