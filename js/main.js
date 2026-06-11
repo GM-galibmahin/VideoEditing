@@ -1,3 +1,57 @@
+// ---------- Build content from js/config.js (SITE object) ----------
+const ytId = url => (String(url || '').match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|shorts\/|embed\/))([\w-]{11})/) || [])[1];
+
+(function renderFromConfig(){
+  if(typeof SITE === 'undefined') return; // config missing — leave the page as-is
+
+  // hero photo (the CSS grade mask follows it via --hero-cutout)
+  const heroImg = document.querySelector('.hero-photo img');
+  if(heroImg && SITE.heroImage){
+    heroImg.src = SITE.heroImage;
+    document.documentElement.style.setProperty('--hero-cutout', `url("${SITE.heroImage}")`);
+  }
+
+  // showreel (maxres thumbnail, hq as automatic fallback layer)
+  const reel = document.querySelector('.reel');
+  if(reel && SITE.showreel){
+    reel.dataset.video = SITE.showreel;
+    const id = ytId(SITE.showreel);
+    if(id) reel.style.background =
+      `url('https://img.youtube.com/vi/${id}/maxresdefault.jpg') center/cover no-repeat,` +
+      `url('https://img.youtube.com/vi/${id}/hqdefault.jpg') center/cover no-repeat`;
+  }
+
+  // work cards (thumbnail derived from the video id; t1–t6 gradients stay as loading fallback)
+  const card = (item, vertical, i) => {
+    const id = ytId(item.video);
+    const thumb = vertical ? 'oar2' : 'hqdefault';
+    const bg = id ? ` style="background:url('https://img.youtube.com/vi/${id}/${thumb}.jpg') center/cover no-repeat"` : '';
+    return `<article class="card tilt reveal" data-max="10" data-video="${item.video || ''}">
+      <div class="card-thumb${vertical ? ' card-thumb-v' : ''} t${(i % 6) + 1}"${bg}><span class="demo-label">▶ PLAY</span></div>
+      <div class="card-body">
+        <div><div class="card-title">${item.title}</div><div class="card-cat">${item.category || ''}</div></div>
+        <span class="card-dur">▶ WATCH</span>
+      </div>
+    </article>`;
+  };
+  const shortsGrid = document.getElementById('shortsGrid');
+  if(shortsGrid && SITE.shorts) shortsGrid.innerHTML = SITE.shorts.map((s, i) => card(s, true, i)).join('');
+  const filmsGrid = document.getElementById('filmsGrid');
+  if(filmsGrid && SITE.films) filmsGrid.innerHTML = SITE.films.map((f, i) => card(f, false, i)).join('');
+
+  // client reviews (photo if given, otherwise initial on a gradient circle)
+  const set = document.querySelector('.testi-set');
+  if(set && SITE.reviews) set.innerHTML = SITE.reviews.map((r, i) => `
+    <div class="testi">
+      <div class="stars">${'★'.repeat(r.stars || 5)}</div>
+      <p class="testi-quote">${r.quote}</p>
+      <div class="testi-who">
+        <div class="testi-av av${(i % 3) + 1}">${r.image ? `<img src="${r.image}" alt="${r.name}">` : (r.initial || (r.name || '?')[0])}</div>
+        <div><div class="testi-name">${r.name}</div><div class="testi-role">${r.role || ''}</div></div>
+      </div>
+    </div>`).join('');
+})();
+
 // ---------- Scroll = timeline scrub ----------
 const playhead = document.getElementById('playhead');
 const scrubTc = document.getElementById('scrubTc');

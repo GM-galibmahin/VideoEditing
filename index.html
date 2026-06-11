@@ -88,7 +88,8 @@
     <span class="sec-note">2026 / 60 SEC</span>
   </div>
   <div class="reel-stage reveal">
-    <div class="reel tilt" data-max="6" data-video="https://www.youtube.com/watch?v=DvJShM2QbNk" style="background:url('https://img.youtube.com/vi/DvJShM2QbNk/maxresdefault.jpg') center/cover no-repeat">
+    <!-- showreel video + thumbnail come from js/config.js -->
+    <div class="reel tilt" data-max="6" data-video="">
       <span class="demo-tag">▶ TAP TO PLAY</span>
       <span class="reel-tc">00:00:21:08</span>
       <div class="play-btn">
@@ -110,36 +111,8 @@
     <h2>Shorts &amp; Reels<span class="format-tag">9:16 VERTICAL</span></h2>
     <span class="sec-note">BUILT FOR MOBILE RETENTION</span>
   </div>
-  <div class="work-grid-v">
-    <article class="card tilt reveal" data-max="10" data-video="https://www.youtube.com/shorts/PeiR6RK3jTw">
-      <div class="card-thumb card-thumb-v t1" style="background:url('https://img.youtube.com/vi/PeiR6RK3jTw/oar2.jpg') center/cover no-repeat"><span class="demo-label">▶ PLAY</span></div>
-      <div class="card-body">
-        <div><div class="card-title">Esports LAN Promo</div><div class="card-cat">EVENT HYPE / PROMO</div></div>
-        <span class="card-dur">▶ WATCH</span>
-      </div>
-    </article>
-    <article class="card tilt reveal" data-max="10" data-video="https://www.youtube.com/shorts/mcr0OLbzMNE">
-      <div class="card-thumb card-thumb-v t4" style="background:url('https://img.youtube.com/vi/mcr0OLbzMNE/oar2.jpg') center/cover no-repeat"><span class="demo-label">▶ PLAY</span></div>
-      <div class="card-body">
-        <div><div class="card-title">Squad Wipe Clip</div><div class="card-cat">FAST CUTS / IMPACT SYNC</div></div>
-        <span class="card-dur">▶ WATCH</span>
-      </div>
-    </article>
-    <article class="card tilt reveal" data-max="10" data-video="https://www.youtube.com/shorts/41AwgkJtYoM">
-      <div class="card-thumb card-thumb-v t5" style="background:url('https://img.youtube.com/vi/41AwgkJtYoM/oar2.jpg') center/cover no-repeat"><span class="demo-label">▶ PLAY</span></div>
-      <div class="card-body">
-        <div><div class="card-title">Stream Highlights</div><div class="card-cat">HOOK-FIRST CUTS</div></div>
-        <span class="card-dur">▶ WATCH</span>
-      </div>
-    </article>
-    <article class="card tilt reveal" data-max="10" data-video="https://www.youtube.com/shorts/MNkhjQahDkk">
-      <div class="card-thumb card-thumb-v t3" style="background:url('https://img.youtube.com/vi/MNkhjQahDkk/oar2.jpg') center/cover no-repeat"><span class="demo-label">▶ PLAY</span></div>
-      <div class="card-body">
-        <div><div class="card-title">Street Food Vlog</div><div class="card-cat">VLOG / BANGLA NARRATION</div></div>
-        <span class="card-dur">▶ WATCH</span>
-      </div>
-    </article>
-  </div>
+  <!-- cards are built from js/config.js (SITE.shorts) -->
+  <div class="work-grid-v" id="shortsGrid"></div>
 </section>
 
 <!-- ============ HORIZONTAL WORK ============ -->
@@ -149,29 +122,8 @@
     <h2>YouTube &amp; Brand Films<span class="format-tag">16:9 HORIZONTAL</span></h2>
     <span class="sec-note">LONG-FORM / CINEMATIC</span>
   </div>
-  <div class="work-grid">
-    <article class="card tilt reveal" data-max="10" data-video="https://www.youtube.com/watch?v=vwvOkgTn_Ng">
-      <div class="card-thumb t2" style="background:url('https://img.youtube.com/vi/vwvOkgTn_Ng/hqdefault.jpg') center/cover no-repeat"><span class="demo-label">▶ PLAY</span></div>
-      <div class="card-body">
-        <div><div class="card-title">Headset Review — G435</div><div class="card-cat">PRODUCT / REVIEW EDIT</div></div>
-        <span class="card-dur">▶ WATCH</span>
-      </div>
-    </article>
-    <article class="card tilt reveal" data-max="10" data-video="https://www.youtube.com/watch?v=wCH9uQg_slY">
-      <div class="card-thumb t3" style="background:url('https://img.youtube.com/vi/wCH9uQg_slY/hqdefault.jpg') center/cover no-repeat"><span class="demo-label">▶ PLAY</span></div>
-      <div class="card-body">
-        <div><div class="card-title">Sniper Shots Montage</div><div class="card-cat">FAST CUTS / SFX SYNC</div></div>
-        <span class="card-dur">▶ WATCH</span>
-      </div>
-    </article>
-    <article class="card tilt reveal" data-max="10" data-video="https://www.youtube.com/watch?v=Zf9kP-lQ2hM">
-      <div class="card-thumb t6" style="background:url('https://img.youtube.com/vi/Zf9kP-lQ2hM/hqdefault.jpg') center/cover no-repeat"><span class="demo-label">▶ PLAY</span></div>
-      <div class="card-body">
-        <div><div class="card-title">PUBG.EXE — Funny Moments</div><div class="card-cat">MEME EDIT / COMEDY TIMING</div></div>
-        <span class="card-dur">▶ WATCH</span>
-      </div>
-    </article>
-  </div>
+  <!-- cards are built from js/config.js (SITE.films) -->
+  <div class="work-grid" id="filmsGrid"></div>
 </section>
 
 <!-- ============ BEFORE / AFTER ============ -->
@@ -259,33 +211,9 @@
     <h2>Client Words</h2>
   </div>
   <div class="testi-marquee reveal">
+    <!-- review cards are built from js/config.js (SITE.reviews) -->
     <div class="testi-track" id="testiTrack">
-      <div class="testi-set">
-        <div class="testi">
-          <div class="stars">★★★★★</div>
-          <p class="testi-quote">Replace this with a real client quote — even one from a small first project counts more than a perfect fake one.</p>
-          <div class="testi-who">
-            <div class="testi-av av1">C</div>
-            <div><div class="testi-name">Client Name</div><div class="testi-role">YOUTUBE CREATOR</div></div>
-          </div>
-        </div>
-        <div class="testi">
-          <div class="stars">★★★★★</div>
-          <p class="testi-quote">Ask every client for one sentence of feedback at delivery. Three short real quotes beat ten invented ones.</p>
-          <div class="testi-who">
-            <div class="testi-av av2">B</div>
-            <div><div class="testi-name">Client Name</div><div class="testi-role">BRAND MANAGER</div></div>
-          </div>
-        </div>
-        <div class="testi">
-          <div class="stars">★★★★★</div>
-          <p class="testi-quote">Specific results land hardest — "this Short got 40K views" says more than "great editor, fast delivery."</p>
-          <div class="testi-who">
-            <div class="testi-av av3">A</div>
-            <div><div class="testi-name">Client Name</div><div class="testi-role">PODCAST HOST</div></div>
-          </div>
-        </div>
-      </div>
+      <div class="testi-set"></div>
     </div>
   </div>
 </section>
@@ -360,6 +288,7 @@
   </div>
 </div>
 
+<script src="js/config.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
