@@ -107,9 +107,10 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 
 ## Conventions for Future Edits
 
-- Structure: `index.html` (markup), `css/style.css` (all styles), `js/main.js` (all behavior) — no build step; keep it that way unless asked
+- Structure: `index.html` (markup), `css/style.css` (all styles), `js/config.js` (CONTENT — the `SITE` object), `js/main.js` (all behavior) — no build step; keep it that way unless asked
+- CONTENT lives in `js/config.js`: `SITE.showreel` (link), `SITE.shorts`/`SITE.films` (card arrays: title/category/video — thumbnails derive from the video id automatically), `SITE.reviews` (quote/name/role/initial/image/stars; image overrides the initial circle), `SITE.heroImage` (the grade mask follows it via `--hero-cutout`). main.js renders these at load into `#shortsGrid`, `#filmsGrid`, `.testi-set` and the reel — to change content, edit ONLY config.js
 - New sections must get the next sequential timecode eyebrow and a `.reveal` class
-- New cards use existing `.card` + `.tilt` pattern with `data-max="10"` and a `data-video=""` attribute (paste a YouTube URL to make it playable in the lightbox)
+- New work cards: add an entry to `SITE.shorts` or `SITE.films` in `js/config.js` — do NOT hand-write card markup; main.js generates `.card`/`.tilt`/`data-video` automatically
 - Vertical video = `card-thumb-v` (9:16), horizontal = default `card-thumb` (16:9)
 - Copy style: confident, short, editor vocabulary (cuts, frames, grade, timecode). Sentence case body, mono uppercase labels.
 - Never add light backgrounds, rounded "bubbly" styles, or generic SaaS-template looks
