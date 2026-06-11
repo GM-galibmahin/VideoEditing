@@ -538,33 +538,37 @@ footer{
   .scrub-tc{min-width:72px;font-size:11px}
 }
 
-/* large desktops / 1440p / ultrawide: scale the stage up */
+/* large desktops / 1440p / ultrawide: go FLUID — content fills the screen,
+   with caps only where stretching hurts (reel height, text measure) */
 @media(min-width:1800px){
-  section,.hero{max-width:1760px}
-  nav{padding:18px calc((100vw - 1760px)/2 + 28px)}
+  section,.hero{max-width:none;margin:0;padding-left:4vw;padding-right:4vw}
+  nav{padding:18px 4vw}
   .logo{font-size:15px}
   .nav-links{gap:34px}
   .nav-links a{font-size:13px}
-  h1{font-size:clamp(190px,11vw,290px)}
-  h2{font-size:clamp(56px,4.4vw,96px)}
+  h1{font-size:clamp(190px,11.5vw,330px)}
+  h2{font-size:clamp(56px,4.4vw,110px)}
   .sec-tc,.sec-note{font-size:13px}
   .hero-sub{font-size:21px;max-width:660px}
   .btn{font-size:14px;padding:16px 30px}
-  .hero-photo{height:min(78vh,940px);right:8%}
+  .hero-photo{height:min(78vh,1100px);right:9%}
   .ff1{width:290px;height:174px}
   .ff2{width:230px;height:138px}
   .ff3{width:420px;height:254px}
   .ffr{width:175px;height:310px}
   .float-frame::before{font-size:12px}
-  .work-grid-v{max-width:1400px}
+  .reel{max-width:min(2200px,140vh);margin:0 auto} /* keep the player inside the viewport */
+  .work-grid-v{max-width:none}
   .card-title{font-size:20px}
   .card-cat,.card-dur{font-size:12px}
   .svc p,.proc p{font-size:15.5px}
   .testi{width:430px}
   .testi-quote{font-size:17px}
+  .ba-wrap{max-width:min(1500px,120vh)}
+  .about-wrap{max-width:1700px;margin:0 auto} /* keep paragraphs readable */
   .about-wrap p{font-size:19px}
   .stat-num{font-size:46px}
-  .contact p{font-size:18px}
+  .contact p{font-size:18px;max-width:560px}
   .scrubber{height:76px}
   .scrub-tc{font-size:15px;min-width:112px}
   .lb-stage{width:min(78vw,1360px)}
@@ -573,17 +577,13 @@ footer{
 
 /* 4K and beyond */
 @media(min-width:2600px){
-  section,.hero{max-width:2080px}
-  nav{padding:18px calc((100vw - 2080px)/2 + 28px)}
-  h1{font-size:clamp(290px,8.2vw,310px)}
-  h2{font-size:clamp(96px,3.6vw,124px)}
+  h1{font-size:clamp(330px,9vw,380px)}
   .hero-sub{font-size:24px;max-width:760px}
-  .hero-photo{height:min(78vh,1280px);right:8%}
+  .hero-photo{height:min(78vh,1300px)} /* source is 1300px tall — don't upscale past it */
   .ff1{width:360px;height:216px}
   .ff2{width:280px;height:168px}
   .ff3{width:520px;height:315px}
   .ffr{width:215px;height:382px}
-  .work-grid-v{max-width:1700px}
   .card-title{font-size:22px}
   .scrubber{height:84px}
   .scrub-tc{font-size:16px;min-width:120px}
