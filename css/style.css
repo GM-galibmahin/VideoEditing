@@ -91,7 +91,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
 /* ---------- HERO ---------- */
 .hero{
   min-height:100vh;display:flex;flex-direction:column;justify-content:center;
-  padding:110px 28px 60px;position:relative;perspective:1200px;
+  padding:110px 28px 84px;position:relative;perspective:1200px; /* bottom padding clears the fixed scrubber */
   max-width:1240px;margin:0 auto; /* keep text + photo composed together on wide screens */
 }
 .hero-eyebrow{
@@ -102,7 +102,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
 h1{
   font-family:var(--display);
-  font-size:clamp(64px,13vw,176px);
+  /* sized by width AND height so the full hero (headline+copy+CTAs) fits the first screen */
+  font-size:clamp(64px,min(13vw,17.4vh),176px);
   line-height:.92;text-transform:uppercase;font-weight:400;
   letter-spacing:.01em;
 }
@@ -552,7 +553,7 @@ footer{
   .logo{font-size:15px}
   .nav-links{gap:34px}
   .nav-links a{font-size:13px}
-  h1{font-size:clamp(190px,11.5vw,330px)}
+  h1{font-size:clamp(170px,min(11.5vw,18.4vh),330px)}
   h2{font-size:clamp(56px,4.4vw,110px)}
   .sec-tc,.sec-note{font-size:13px}
   .hero-sub{font-size:21px;max-width:660px}
@@ -583,7 +584,7 @@ footer{
 
 /* 4K and beyond */
 @media(min-width:2600px){
-  h1{font-size:clamp(330px,9vw,380px)}
+  h1{font-size:clamp(240px,min(9vw,19vh),380px)}
   .hero-sub{font-size:24px;max-width:760px}
   .hero-visual{height:min(78vh,1300px)} /* source is 1300px tall — don't upscale past it */
   .ff1{width:360px;height:216px}
