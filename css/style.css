@@ -156,7 +156,7 @@ h1 .grade{
 }
 .hero-photo img{
   height:100%;width:auto;display:block;position:relative;z-index:0;
-  filter:brightness(.86) saturate(.78) contrast(1.06);
+  filter:brightness(.94) saturate(.92) contrast(1.04);
 }
 /* split-tone grade clipped to the cutout's alpha:
    deep teal lifts the shadows (lighten), warm orange caps the highlights (darken) */
@@ -167,11 +167,11 @@ h1 .grade{
 }
 .hero-photo::before{
   z-index:1;mix-blend-mode:lighten;
-  background:linear-gradient(165deg,rgba(18,70,66,.92),rgba(26,94,86,.92));
+  background:linear-gradient(165deg,rgba(8,34,32,.85),rgba(12,46,42,.85));
 }
 .hero-photo::after{
   z-index:2;mix-blend-mode:darken;
-  background:linear-gradient(165deg,rgba(255,205,160,.95),rgba(243,166,118,.95));
+  background:linear-gradient(165deg,rgba(255,226,198,.9),rgba(250,206,170,.9));
 }
 /* depth: far frames (ff3, ffr) sit behind the photo, nearer frames float in front */
 .ff1{z-index:3}
