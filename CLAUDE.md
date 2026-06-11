@@ -66,7 +66,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 8. **How I Work** (`#process`, tc 00:06) — 4-step strip: Brief → Rough Cut → Polish → Delivery
 9. **Client Words** (`#testimonials`, tc 00:07) — 3 testimonial cards (currently placeholder coaching text — REPLACE with real client quotes)
 10. **About** (`#about`, tc 00:08) — bio, tools list (Premiere, AE, DaVinci, CapCut, Photoshop), 4 stat blocks
-11. **Contact** (`#contact`, tc 00:09 — FINAL CUT) — email + social links (currently placeholder `#` hrefs). No pricing on the site by design — quotes happen in private conversation.
+11. **Contact** (`#contact`, tc 00:09 — FINAL CUT) — email mahingalib65@gmail.com + socials (YouTube / Instagram / X / LinkedIn, open in new tab). No pricing on the site by design — quotes happen in private conversation.
 12. **Footer** — "EDITED, NOT GENERATED."
 13. **Scrubber bar** — fixed bottom (see signature features)
 
@@ -95,7 +95,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 
 - [ ] Replace ALL demo placeholders with real video embeds (YouTube/Vimeo iframes or `<video>` tags)
 - [ ] Replace testimonial placeholder text with real client quotes
-- [ ] Set real email (currently `hello@galib.edits`) and social URLs (currently `#`)
+- [x] Set real email (mahingalib65@gmail.com) and social URLs (YouTube @CyclopsGM, Instagram @galibmahin, X @galib_mahin, LinkedIn /in/galibmahin)
 - [x] Split into `index.html` / `css/style.css` / `js/main.js` when project grows
 - [x] Add mobile hamburger menu (nav links currently hidden under 820px)
 - [x] Deploy — live at https://galibmahin-edits.pages.dev/ on Cloudflare Pages (unlimited free bandwidth). Direct-upload project: deploys happen via `npx wrangler pages deploy <dir> --project-name galibmahin-edits`, NOT automatically on git push. Repo: GM-galibmahin/VideoEditing (GitHub Pages disabled to avoid a duplicate copy)
