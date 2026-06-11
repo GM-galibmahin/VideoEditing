@@ -456,11 +456,11 @@ h2{
   background:rgba(12,13,17,.88);backdrop-filter:blur(8px);
 }
 .lb-stage{
-  position:relative;width:min(92vw,960px);
+  position:relative;width:min(92vw,960px,124vh); /* 124vh caps the 16:9 player at ~70vh tall */
   transform:translateY(18px) scale(.97);transition:transform .3s ease;
 }
 .lightbox.open .lb-stage{transform:none}
-.lightbox.vertical .lb-stage{width:min(80vw,400px,56.25dvh)}
+.lightbox.vertical .lb-stage{width:min(80vw,400px,42dvh)} /* 42dvh caps the Shorts player at ~75vh tall */
 .lb-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;gap:14px}
 .lb-tc{font-family:var(--mono);font-size:12px;color:var(--orange);letter-spacing:.14em;text-transform:uppercase}
 .lb-close{
@@ -565,9 +565,11 @@ footer{
   nav{padding:18px calc(4vw/var(--z))}
   h1{font-size:clamp(64px,min(calc(13vw/var(--z)),calc(17.4vh/var(--z))),176px)}
   .hero-visual{height:calc(78vh/var(--z));right:8%}
-  /* lightbox is zoomed with body — compensate its viewport-unit sizes too */
-  .lb-stage{width:min(calc(92vw/var(--z)),960px)}
-  .lightbox.vertical .lb-stage{width:min(calc(80vw/var(--z)),400px,calc(56.25dvh/var(--z)))}
+  /* take the lightbox OUT of the zoom system entirely and size it purely
+     by viewport proportions — immune to zoom/viewport-unit quirks */
+  .lightbox{zoom:calc(1/var(--z))}
+  .lb-stage{width:min(92vw,124vh)}                  /* 16:9 player ≈ 70vh tall */
+  .lightbox.vertical .lb-stage{width:min(80vw,40dvh)} /* Shorts ≈ 71vh tall */
 }
 @media(min-width:2200px){body{--z:1.4;--zs:1.15}}
 @media(min-width:2700px){body{--z:1.7;--zs:1.25}}
