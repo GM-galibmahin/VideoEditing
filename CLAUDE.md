@@ -93,7 +93,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 
 ## TODO / Roadmap
 
-- [ ] Replace ALL demo placeholders with real video embeds (YouTube/Vimeo iframes or `<video>` tags)
+- [ ] Replace ALL demo placeholders with real video embeds — all 8 `data-video` slots currently hold STAND-IN videos (Blender open movies / 4K demos) so the lightbox is testable; swap each URL for Galib's actual work when ready
 - [ ] Replace testimonial placeholder text with real client quotes (scrolling marquee is built — just swap the card contents in the single `.testi-set`; the loop clone is automatic)
 - [x] Set real email (mahingalib65@gmail.com) and social URLs (YouTube @CyclopsGM, Instagram @galibmahin, X @galib_mahin, LinkedIn /in/galibmahin)
 - [x] Split into `index.html` / `css/style.css` / `js/main.js` when project grows
