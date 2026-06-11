@@ -584,13 +584,15 @@ footer{
 
 /* 4K and beyond */
 @media(min-width:2600px){
-  h1{font-size:clamp(240px,min(9vw,19vh),380px)}
-  .hero-sub{font-size:24px;max-width:760px}
-  .hero-visual{height:min(78vh,1300px)} /* source is 1300px tall — don't upscale past it */
-  .ff1{width:360px;height:216px}
-  .ff2{width:280px;height:168px}
-  .ff3{width:520px;height:315px}
-  .ffr{width:215px;height:382px}
+  h1{font-size:clamp(240px,min(11vw,19vh),420px)}
+  .hero-sub{font-size:26px;max-width:820px}
+  .btn{font-size:15px;padding:18px 34px}
+  /* fill the screen height; ~1.3x photo upscale is invisible at 4K viewing distance */
+  .hero-visual{height:82vh;right:6%}
+  .ff1{width:430px;height:258px}
+  .ff2{width:340px;height:204px;right:88%} /* spread further into the middle */
+  .ff3{width:620px;height:376px;right:62%}
+  .ffr{width:260px;height:462px}
   .card-title{font-size:22px}
   .scrubber{height:84px}
   .scrub-tc{font-size:16px;min-width:120px}
