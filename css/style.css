@@ -92,6 +92,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offse
 .hero{
   min-height:100vh;display:flex;flex-direction:column;justify-content:center;
   padding:110px 28px 60px;position:relative;perspective:1200px;
+  max-width:1240px;margin:0 auto; /* keep text + photo composed together on wide screens */
 }
 .hero-eyebrow{
   font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--teal);
