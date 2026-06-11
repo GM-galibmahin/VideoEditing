@@ -37,7 +37,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 
 ### Visual identity rules
 - Dark editing-suite aesthetic throughout. Never introduce light mode without request.
-- Film grain overlay: fixed SVG noise at 5% opacity over the whole page.
+- Film grain: fixed SVG noise at 5% opacity on the page BACKGROUND only (body::after, z-index:-1) — content renders clean above it.
 - Section headers use fake timecodes as eyebrows (`00:01`, `00:02`, ...) — keep sequential if adding/removing sections.
 - Border radius: 12–14px on cards/panels, 3–4px on tags/buttons.
 - Card thumbnails are real YouTube stills (inline `background` styles, `oar2.jpg` portrait for Shorts / `hqdefault.jpg` for 16:9); the `t1`–`t6` gradient classes remain as loading/fallback backgrounds.
