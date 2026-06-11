@@ -49,7 +49,8 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 1. **Timeline scrubber (bottom bar)** — Fixed 64px bar styled like an editing timeline with colored clips. A white playhead tracks scroll progress; timecode counts up as if the page is a 90-second video at 24fps. This is the site's most memorable element.
 2. **3D tilt cards** — `.tilt` elements rotate in 3D following the mouse (`data-max` attribute controls max degrees). Applied to showreel player and all work cards.
 3. **Before/After grade slider ("The Grade Room")** — Draggable comparison of real stills: `assets/grade-before.jpg` (flat log look) vs `assets/grade-after.jpg` (orange/teal grade), generated from the same photo. Swap these two files to feature stills from an actual client grade. Uses Pointer Events (works on touch). Clip-path based.
-4. **Hero parallax frames** — Floating bordered "frames" with timecodes drift opposite to mouse movement (`data-depth` controls intensity). Hidden on mobile.
+4. **Hero parallax frames** — Floating bordered "frames" with timecodes drift opposite to mouse movement (`data-depth` controls intensity). Hidden on mobile. Now arranged around the hero portrait: `ff1` sits BEHIND the photo (z-index 1, large `data-depth` 80 = moves more = far), `ff2`/`ff3` sit IN FRONT (z-index 3, small depth 22/30 = move less = close, frosted via backdrop-blur, overlapping the photo edges).
+5. **Hero portrait** — Static photo at `./assets/me.png` (`.hero-portrait` / `.portrait-card`, ~420px clamped, 4:5 ratio). The image itself never moves — only the frames around it parallax. Orange/teal glow behind, `--line` border + grade overlay, mono `CAM_A / GALIB` timecode label. On mobile it drops above the heading at ~220px.
 5. **Blinking REC dot** in hero eyebrow.
 
 ---
