@@ -134,9 +134,10 @@ h1 .grade{
   background:linear-gradient(135deg,rgba(255,107,44,.07),rgba(45,214,193,.07));
   pointer-events:none;will-change:transform;
 }
-.ff1{width:300px;height:180px;top:14%;right:8%;transform:rotate(6deg)}
-.ff2{width:220px;height:130px;bottom:18%;right:22%;transform:rotate(-8deg)}
-.ff3{width:160px;height:100px;top:30%;right:34%;transform:rotate(3deg)}
+/* positioned around the hero photo: ff3 behind it, ff1/ff2 in front */
+.ff1{width:200px;height:120px;bottom:16%;right:5%;transform:rotate(6deg)}
+.ff2{width:160px;height:95px;top:46%;right:30%;transform:rotate(-8deg)}
+.ff3{width:290px;height:175px;top:13%;right:19%;transform:rotate(3deg)}
 .float-frame::before{
   content:attr(data-tc);position:absolute;bottom:8px;left:10px;
   font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.08em;
@@ -144,10 +145,10 @@ h1 .grade{
 
 /* ---------- HERO PHOTO (plain static cutout, frames float around it) ---------- */
 .hero-photo{
-  position:absolute;z-index:2;right:9%;top:50%;transform:translateY(-50%);
-  width:clamp(300px,32vw,450px);aspect-ratio:4/5;
-  object-fit:cover;object-position:center top;
+  position:absolute;z-index:2;right:12%;top:50%;transform:translateY(-50%);
+  height:min(72vh,640px);width:auto;
   pointer-events:none;
+  filter:drop-shadow(0 24px 48px rgba(0,0,0,.55));
 }
 /* depth: the far frame (ff3) sits behind the photo, nearer frames float in front */
 .ff1{z-index:3}
@@ -471,7 +472,7 @@ footer{
   .nav-toggle{display:flex}
   .mobile-menu{display:flex}
   .hero{align-items:flex-start;gap:24px}
-  .hero-photo{position:static;transform:none;order:-1;align-self:center;width:clamp(170px,52vw,220px)}
+  .hero-photo{position:static;transform:none;order:-1;align-self:center;height:auto;width:clamp(160px,46vw,220px)}
   .about-wrap{grid-template-columns:1fr}
   .float-frame{display:none}
   section{padding:80px 20px}
