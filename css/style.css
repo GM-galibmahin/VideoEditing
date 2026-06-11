@@ -552,7 +552,7 @@ footer{
    the tuned 1920x1080 layout, pixel-doubled. Steps keep the effective CSS
    viewport in the ~1500-2000px range where the base design is verified. */
 @media(min-width:1800px){
-  body{--z:1.15;--zs:1.15;zoom:var(--z)}
+  body{--z:1.15;--zs:1.1;zoom:var(--z)}
   /* sections scale GENTLER than the hero: nested zoom multiplies, so
      zs/z counter-scales them down to the --zs factor */
   section,footer{zoom:calc(var(--zs)/var(--z))}
@@ -565,10 +565,13 @@ footer{
   nav{padding:18px calc(4vw/var(--z))}
   h1{font-size:clamp(64px,min(calc(13vw/var(--z)),calc(17.4vh/var(--z))),176px)}
   .hero-visual{height:calc(78vh/var(--z));right:8%}
+  /* lightbox is zoomed with body — compensate its viewport-unit sizes too */
+  .lb-stage{width:min(calc(92vw/var(--z)),960px)}
+  .lightbox.vertical .lb-stage{width:min(calc(80vw/var(--z)),400px,calc(56.25dvh/var(--z)))}
 }
-@media(min-width:2200px){body{--z:1.4;--zs:1.25}}
-@media(min-width:2700px){body{--z:1.7;--zs:1.4}}
-@media(min-width:3300px){body{--z:2;--zs:1.55}}
+@media(min-width:2200px){body{--z:1.4;--zs:1.15}}
+@media(min-width:2700px){body{--z:1.7;--zs:1.25}}
+@media(min-width:3300px){body{--z:2;--zs:1.35}}
 
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
