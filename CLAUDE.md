@@ -101,7 +101,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 - [x] Split into `index.html` / `css/style.css` / `js/main.js` when project grows
 - [x] Add mobile hamburger menu (nav links currently hidden under 820px)
 - [ ] Deploy to GitHub Pages / Netlify / Vercel
-- [ ] Add Open Graph meta tags + favicon before deploying
+- [x] Add Open Graph meta tags + favicon before deploying (og:url/og:image use a placeholder domain — swap in the real domain after deploy)
 - [ ] Optional: real before/after stills from an actual grade in The Grade Room
 - [x] Optional: lightbox/modal video player so clips play without leaving the page
 
