@@ -554,16 +554,14 @@ footer{
 @media(min-width:1800px){
   body{--z:1.15;zoom:var(--z)}
   /* vw/vh inside a zoomed body get scaled AGAIN by the engine,
-     so every viewport-unit length here is divided by --z to stay true */
-  section,.hero{max-width:none;margin:0;padding-left:calc(4vw/var(--z));padding-right:calc(4vw/var(--z))}
+     so every viewport-unit length here is divided by --z to stay true.
+     Only the HERO goes full-bleed; sections keep their centered 1240px
+     container (zoom scales it proportionally). */
+  .hero{max-width:none;margin:0;min-height:calc(100vh/var(--z));
+        padding-left:calc(4vw/var(--z));padding-right:calc(4vw/var(--z))}
   nav{padding:18px calc(4vw/var(--z))}
-  .hero{min-height:calc(100vh/var(--z))}
   h1{font-size:clamp(64px,min(calc(13vw/var(--z)),calc(17.4vh/var(--z))),176px)}
   .hero-visual{height:calc(78vh/var(--z));right:8%}
-  .reel{max-width:calc(140vh/var(--z));margin:0 auto} /* keep the player inside the viewport */
-  .ba-wrap{max-width:min(1500px,calc(120vh/var(--z)))}
-  .about-wrap{max-width:1700px;margin:0 auto} /* readable text measure */
-  .work-grid-v{max-width:none}
 }
 @media(min-width:2200px){body{--z:1.4}}
 @media(min-width:2700px){body{--z:1.7}}
