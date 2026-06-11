@@ -310,27 +310,6 @@ h2{
 .testi-role{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:3px}
 .stars{color:var(--orange);font-size:13px;letter-spacing:3px}
 
-/* ---------- PRICING ---------- */
-.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
-.plan{
-  border:1px solid var(--line);border-radius:12px;padding:32px 28px;background:var(--panel);
-  display:flex;flex-direction:column;transition:transform .3s,border-color .3s;
-}
-.plan:hover{transform:translateY(-6px)}
-.plan.featured{border-color:var(--orange);position:relative;background:var(--panel-2)}
-.plan.featured::before{
-  content:'MOST BOOKED';position:absolute;top:-11px;left:24px;
-  font-family:var(--mono);font-size:10px;letter-spacing:.14em;
-  background:var(--orange);color:var(--ink);padding:4px 10px;border-radius:3px;font-weight:500;
-}
-.plan-name{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--teal);margin-bottom:14px}
-.plan-price{font-family:var(--display);font-size:42px;margin-bottom:4px}
-.plan-price span{font-family:var(--mono);font-size:12px;color:var(--muted)}
-.plan ul{list-style:none;margin:22px 0 28px;display:flex;flex-direction:column;gap:12px}
-.plan li{font-size:14px;color:var(--muted);display:flex;gap:10px}
-.plan li::before{content:'▸';color:var(--orange)}
-.plan .btn{margin-top:auto;text-align:center}
-
 /* ---------- SERVICES ---------- */
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
 .svc{

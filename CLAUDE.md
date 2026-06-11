@@ -56,7 +56,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 
 ## Page Structure (in order)
 
-1. **Nav** — fixed, logo `GALIB.EDITS`, links: Showreel / Shorts / Films / Services / Pricing / Contact
+1. **Nav** — fixed, logo `GALIB.EDITS`, links: Showreel / Shorts / Films / Services / Contact
 2. **Hero** — "I CUT / STORIES / IN MOTION" (line 2 is outlined stroke text, line 3 is orange→teal gradient text), sub-copy, two CTAs
 3. **Showreel** (`#showreel`, tc 00:01) — large 16:9 demo player with play button, fake progress bar, DEMO tag
 4. **Shorts & Reels** (`#work`, tc 00:02) — FOUR 9:16 vertical cards: Mojo Brand Story, Kinetic Lyrics Reel, Podcast Hook Clips, Street Food Series
@@ -65,11 +65,10 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 7. **Services** (`#services`, tc 00:05) — 4 cards: Video Editing, Motion Graphics, Color Grading, Sound Design
 8. **How I Work** (`#process`, tc 00:06) — 4-step strip: Brief → Rough Cut → Polish → Delivery
 9. **Client Words** (`#testimonials`, tc 00:07) — 3 testimonial cards (currently placeholder coaching text — REPLACE with real client quotes)
-10. **Packages** (`#pricing`, tc 00:08) — Short-Form $25/video, Creator Pack $200/10 videos (featured), Long-Form $80+/video. Prices are placeholder estimates — verify against market.
-11. **About** (`#about`, tc 00:09) — bio, tools list (Premiere, AE, DaVinci, CapCut, Photoshop), 4 stat blocks
-12. **Contact** (`#contact`, tc 00:10 — FINAL CUT) — email + social links (currently placeholder `#` hrefs)
-13. **Footer** — "EDITED, NOT GENERATED."
-14. **Scrubber bar** — fixed bottom (see signature features)
+10. **About** (`#about`, tc 00:08) — bio, tools list (Premiere, AE, DaVinci, CapCut, Photoshop), 4 stat blocks
+11. **Contact** (`#contact`, tc 00:09 — FINAL CUT) — email + social links (currently placeholder `#` hrefs). No pricing on the site by design — quotes happen in private conversation.
+12. **Footer** — "EDITED, NOT GENERATED."
+13. **Scrubber bar** — fixed bottom (see signature features)
 
 ---
 
@@ -97,7 +96,6 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 - [ ] Replace ALL demo placeholders with real video embeds (YouTube/Vimeo iframes or `<video>` tags)
 - [ ] Replace testimonial placeholder text with real client quotes
 - [ ] Set real email (currently `hello@galib.edits`) and social URLs (currently `#`)
-- [ ] Verify/adjust package pricing for target market (Fiverr competition research)
 - [x] Split into `index.html` / `css/style.css` / `js/main.js` when project grows
 - [x] Add mobile hamburger menu (nav links currently hidden under 820px)
 - [x] Deploy — live at https://galibmahin-edits.pages.dev/ on Cloudflare Pages (unlimited free bandwidth). Direct-upload project: deploys happen via `npx wrangler pages deploy <dir> --project-name galibmahin-edits`, NOT automatically on git push. Repo: GM-galibmahin/VideoEditing (GitHub Pages disabled to avoid a duplicate copy)
