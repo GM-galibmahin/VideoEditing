@@ -48,7 +48,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 
 1. **Timeline scrubber (bottom bar)** — Fixed 64px bar styled like an editing timeline with colored clips. A white playhead tracks scroll progress; timecode counts up as if the page is a 90-second video at 24fps. This is the site's most memorable element.
 2. **3D tilt cards** — `.tilt` elements rotate in 3D following the mouse (`data-max` attribute controls max degrees). Applied to showreel player and all work cards.
-3. **Before/After grade slider ("The Grade Room")** — Draggable comparison: flat gray "log footage" vs. graded orange/teal version. Uses Pointer Events (works on touch). Clip-path based.
+3. **Before/After grade slider ("The Grade Room")** — Draggable comparison of real stills: `assets/grade-before.jpg` (flat log look) vs `assets/grade-after.jpg` (orange/teal grade), generated from the same photo. Swap these two files to feature stills from an actual client grade. Uses Pointer Events (works on touch). Clip-path based.
 4. **Hero parallax frames** — Floating bordered "frames" with timecodes drift opposite to mouse movement (`data-depth` controls intensity). Hidden on mobile.
 5. **Blinking REC dot** in hero eyebrow.
 
@@ -102,7 +102,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 - [x] Add mobile hamburger menu (nav links currently hidden under 820px)
 - [x] Deploy — live at https://galibmahin-edits.pages.dev/ on Cloudflare Pages (unlimited free bandwidth). Direct-upload project: deploys happen via `npx wrangler pages deploy <dir> --project-name galibmahin-edits`, NOT automatically on git push. Repo: GM-galibmahin/VideoEditing (GitHub Pages disabled to avoid a duplicate copy)
 - [x] Add Open Graph meta tags + favicon before deploying (og:url/og:image point at the GitHub Pages URL — update if a custom domain is added)
-- [ ] Optional: real before/after stills from an actual grade in The Grade Room
+- [x] Optional: real before/after stills from an actual grade in The Grade Room (photo with a real log-flatten + orange/teal grade applied; replace `assets/grade-before.jpg` / `grade-after.jpg` with client-work stills when available — same filenames, no code change)
 - [x] Optional: lightbox/modal video player so clips play without leaving the page
 
 ## Conventions for Future Edits

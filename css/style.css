@@ -250,16 +250,10 @@ h2{
 }
 .ba-layer{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .ba-before{
-  background:
-    radial-gradient(ellipse at 30% 40%,rgba(140,150,160,.4),transparent 60%),
-    linear-gradient(130deg,#3a3f48 0%,#565d68 50%,#454a55 100%);
-  filter:saturate(.55) brightness(.92);
+  background:url('../assets/grade-before.jpg') center/cover no-repeat;
 }
 .ba-after{
-  background:
-    radial-gradient(ellipse at 30% 40%,rgba(255,107,44,.45),transparent 60%),
-    radial-gradient(ellipse at 75% 70%,rgba(45,214,193,.4),transparent 55%),
-    linear-gradient(130deg,#2a2530 0%,#4a3540 50%,#1f3038 100%);
+  background:url('../assets/grade-after.jpg') center/cover no-repeat;
   clip-path:inset(0 0 0 50%);
 }
 .ba-label{
