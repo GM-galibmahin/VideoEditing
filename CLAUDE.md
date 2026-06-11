@@ -64,7 +64,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 6. **The Grade Room** (`#grade`, tc 00:04) — before/after slider
 7. **Services** (`#services`, tc 00:05) — 4 cards: Video Editing, Motion Graphics, Color Grading, Sound Design
 8. **How I Work** (`#process`, tc 00:06) — 4-step strip: Brief → Rough Cut → Polish → Delivery
-9. **Client Words** (`#testimonials`, tc 00:07) — 3 testimonial cards (currently placeholder coaching text — REPLACE with real client quotes)
+9. **Client Words** (`#testimonials`, tc 00:07) — auto-scrolling testimonial marquee (45s loop, pauses on hover/focus, edge fade mask; JS clones the `.testi-set` once for a seamless -50% loop; reduced-motion gets a static wrapped layout). Cards are placeholder coaching text — REPLACE with real client quotes
 10. **About** (`#about`, tc 00:08) — bio, tools list (Premiere, AE, DaVinci, CapCut, Photoshop), 4 stat blocks
 11. **Contact** (`#contact`, tc 00:09 — FINAL CUT) — email mahingalib65@gmail.com + socials (YouTube / Instagram / X / LinkedIn, open in new tab). No pricing on the site by design — quotes happen in private conversation.
 12. **Footer** — "EDITED, NOT GENERATED."
@@ -94,7 +94,7 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 ## TODO / Roadmap
 
 - [ ] Replace ALL demo placeholders with real video embeds (YouTube/Vimeo iframes or `<video>` tags)
-- [ ] Replace testimonial placeholder text with real client quotes
+- [ ] Replace testimonial placeholder text with real client quotes (scrolling marquee is built — just swap the card contents in the single `.testi-set`; the loop clone is automatic)
 - [x] Set real email (mahingalib65@gmail.com) and social URLs (YouTube @CyclopsGM, Instagram @galibmahin, X @galib_mahin, LinkedIn /in/galibmahin)
 - [x] Split into `index.html` / `css/style.css` / `js/main.js` when project grows
 - [x] Add mobile hamburger menu (nav links currently hidden under 820px)

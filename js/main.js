@@ -79,6 +79,16 @@ baWrap.addEventListener('pointermove', e => { if(dragging) setBA(e.clientX); });
 baWrap.addEventListener('pointerup', () => { dragging = false; });
 baWrap.addEventListener('pointercancel', () => { dragging = false; });
 
+// ---------- Testimonial marquee ----------
+// clone the card set once for a seamless -50% loop; skipped under reduced motion
+const testiTrack = document.getElementById('testiTrack');
+if(testiTrack && !reduceMotion){
+  const clone = testiTrack.querySelector('.testi-set').cloneNode(true);
+  clone.setAttribute('aria-hidden', 'true');
+  testiTrack.appendChild(clone);
+  testiTrack.classList.add('scrolling');
+}
+
 // ---------- Lightbox video player ----------
 const lightbox = document.getElementById('lightbox');
 const lbFrame = document.getElementById('lbFrame');
