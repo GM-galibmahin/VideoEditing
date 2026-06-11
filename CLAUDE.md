@@ -100,8 +100,8 @@ Loaded via Google Fonts. Timecodes follow `HH:MM:SS:FF` format (24fps frames).
 - [ ] Verify/adjust package pricing for target market (Fiverr competition research)
 - [x] Split into `index.html` / `css/style.css` / `js/main.js` when project grows
 - [x] Add mobile hamburger menu (nav links currently hidden under 820px)
-- [ ] Deploy to GitHub Pages / Netlify / Vercel
-- [x] Add Open Graph meta tags + favicon before deploying (og:url/og:image use a placeholder domain — swap in the real domain after deploy)
+- [x] Deploy to GitHub Pages / Netlify / Vercel — live at https://gm-galibmahin.github.io/VideoEditing/ (repo: GM-galibmahin/VideoEditing, deploys from main)
+- [x] Add Open Graph meta tags + favicon before deploying (og:url/og:image point at the GitHub Pages URL — update if a custom domain is added)
 - [ ] Optional: real before/after stills from an actual grade in The Grade Room
 - [x] Optional: lightbox/modal video player so clips play without leaving the page
 
